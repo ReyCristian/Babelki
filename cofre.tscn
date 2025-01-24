@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkast56red7c2"]
+
+[ext_resource type="Script" path="res://cofre.gd" id="1_76eem"]
+[ext_resource type="Texture2D" uid="uid://c4pdkvniyevlb" path="res://recursos/entorno/cerrado.png" id="2_8svq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3soly"]
+size = Vector2(135.556, 144.444)
+
+[node name="Cofre" type="CharacterBody2D"]
+script = ExtResource("1_76eem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_8svq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(7.77778, 3.33333)
+shape = SubResource("RectangleShape2D_3soly")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

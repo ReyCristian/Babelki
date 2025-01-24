@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck8ld6bahewyf"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_tklb1"]
+[ext_resource type="Texture2D" uid="uid://bscminr34jv2s" path="res://recursos/Player/pez temporal.png" id="2_huhd5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1toug"]
+size = Vector2(83.5, 57)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_tklb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, 2.38419e-07)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_huhd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.25, 0)
+shape = SubResource("RectangleShape2D_1toug")
