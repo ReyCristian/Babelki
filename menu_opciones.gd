@@ -41,7 +41,10 @@ func _on_efect_value_changed(value: float) -> void:
 func _on_volver_pressed() -> void:
 	print(get_tree().current_scene)
 	if get_tree().current_scene.name=="Menu_Opcion":
-		get_tree().change_scene_to_file("res://main.tscn")#vuelve al main
+		get_tree().change_scene_to_file("res://main_menu.tscn")#vuelve al main
+	else:
+		get_tree().get_first_node_in_group("menu_pause").visible=true
+		$"..".visible=false
 
 
 func _on_fullscreen_button_pressed():

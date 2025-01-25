@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxk016y5ek036"]
+
+[ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="1_3411q"]
+[ext_resource type="PackedScene" uid="uid://c2otxb2jr1x6p" path="res://menu_opcion.tscn" id="1_j1og0"]
+[ext_resource type="Script" path="res://menu_pause.gd" id="1_vx2gt"]
+
+[node name="menu_pause" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1916.0
+offset_bottom = 1072.0
+texture = ExtResource("1_3411q")
+
+[node name="Menu_Opcion" parent="." instance=ExtResource("1_j1og0")]
+visible = false
+
+[node name="menu_pause" type="VBoxContainer" parent="."]
+offset_right = 84.0
+offset_bottom = 136.0
+script = ExtResource("1_vx2gt")
+
+[node name="continuar" type="Button" parent="menu_pause"]
+layout_mode = 2
+text = "continuar"
+
+[node name="opciones" type="Button" parent="menu_pause"]
+layout_mode = 2
+text = "opciones"
+
+[node name="menuprin" type="Button" parent="menu_pause"]
+layout_mode = 2
+text = "Inicio
+"
+
+[node name="salida" type="Button" parent="menu_pause"]
+layout_mode = 2
+text = "salida"
+
+[connection signal="pressed" from="menu_pause/continuar" to="menu_pause" method="_on_continuar_pressed"]
+[connection signal="pressed" from="menu_pause/opciones" to="menu_pause" method="_on_opciones_pressed"]
+[connection signal="pressed" from="menu_pause/menuprin" to="menu_pause" method="_on_menuprin_pressed"]
+[connection signal="pressed" from="menu_pause/salida" to="menu_pause" method="_on_salida_pressed"]
