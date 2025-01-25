@@ -24,7 +24,6 @@ func color_bubbles():
 func tamaño_burbuja():
 	var escala = (abs(cantidad_aire)+0.01) / 0.04
 	scale = Vector2(escala,escala)
-	print(scale)
 	
 
 func flotar():
@@ -41,5 +40,4 @@ func pop() -> float:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	print("fuera")
 	queue_free()
