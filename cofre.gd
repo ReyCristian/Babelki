@@ -23,7 +23,7 @@ func start_shooting():
 		is_shooting = true
 		$shoot_timer.start()  # Comienza a disparar burbujas
 		$shoot_duration_timer.start()  # Comienza la cuenta regresiva del tiempo de disparo
-		cantidad=randf_range(-0.04,0.05)
+		cantidad=randf_range(-0.03,0.03)
 
 
 

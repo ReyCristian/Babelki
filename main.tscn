@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cce44wngl1yfa"]
+[gd_scene load_steps=6 format=3 uid="uid://cce44wngl1yfa"]
 
+[ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="1_2ljj2"]
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
 [ext_resource type="Texture2D" uid="uid://bkj6h1cg44itn" path="res://recursos/entorno/fondo pecera.png" id="2_w1d6x"]
 [ext_resource type="Script" path="res://generador_de_cofres.gd" id="4_tw68s"]
 [ext_resource type="Script" path="res://Movimiento_fondo.gd" id="4_w6jmw"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Audio3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2ljj2")
+volume_db = -30.0
+autoplay = true
 
 [node name="Agua" type="Node2D" parent="."]
 script = ExtResource("1_7jjyr")

@@ -6,13 +6,11 @@ class_name Player extends CharacterBody2D
 
 var en_burbuja = true;
 
-
 func _physics_process(delta):
 	if en_burbuja:
 		nadar();
 	else:
 		caer();
-		
 	handle_movement(delta);
 
 func handle_movement(delta):

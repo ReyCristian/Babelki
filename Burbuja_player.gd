@@ -4,6 +4,8 @@ extends Area2D
 @export var tamaño_minimo: int;
 @export var player:Player;
 
+var oxigeno = 1.0;
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var perdida = delta * velocidad_perdida;

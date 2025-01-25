@@ -7,7 +7,8 @@ var direction = Vector2.UP
 
 func _ready() -> void:
 	color_bubbles()
-
+	tamaño_burbuja()
+	flotar()
 
 
 
@@ -21,6 +22,16 @@ func _physics_process(delta):
 func color_bubbles():
 	if cantidad_aire<0:
 		modulate = Color("c10011")
+		
+func tamaño_burbuja():
+	var escala = (abs(cantidad_aire)+0.01) / 0.04
+	scale = Vector2(escala,escala)
+	
+
+func flotar():
+	#var random_start = randi_range(0, $AnimationPlayer.current_animation_length)
+	#$AnimationPlayer.seek(random_start, true)
+	$AnimationPlayer.play("flotar")
 
 
 
