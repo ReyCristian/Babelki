@@ -17,8 +17,7 @@ func _process(delta: float) -> void:
 
 func revisar_tamaño():
 	if (obtener_tamaño() < 1):
-		player.burbuja_pop();
-		queue_free()
+		pop()
 	pass
 	
 func obtener_tamaño():
@@ -35,3 +34,7 @@ func _on_area_entered(area: Area2D) -> void:
 func calcular_oxigeno():
 	oxigeno = (min(scale.x, scale.y) - 0.99)/(escala_inicial - 0.99)
 	$"../CanvasLayer/VBoxContainer/oxigeno".text = str("%d%%" % int(oxigeno * 100))
+
+func pop():
+		player.burbuja_pop();
+		queue_free()
