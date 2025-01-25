@@ -1,19 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck8ld6bahewyf"]
+[gd_scene load_steps=7 format=3 uid="uid://ck8ld6bahewyf"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tklb1"]
-[ext_resource type="Texture2D" uid="uid://bscminr34jv2s" path="res://recursos/Player/pez temporal.png" id="2_huhd5"]
+[ext_resource type="Script" path="res://Burbuja_player.gd" id="2_5d8wt"]
+[ext_resource type="Texture2D" uid="uid://b67dt34qoykbq" path="res://recursos/burbujas/bubuja.png" id="2_j52q8"]
+[ext_resource type="Texture2D" uid="uid://dlqntvxg7sw68" path="res://icon.svg" id="3_lcfq3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1toug"]
-size = Vector2(83.5, 57)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2nir"]
+radius = 79.0063
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wmyn"]
+size = Vector2(62.5, 62.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tklb1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.52588e-05, 2.38419e-07)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_huhd5")
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_5d8wt")
+"tamaño_minimo" = 100
+player = NodePath("..")
+
+[node name="Bubuja" type="Sprite2D" parent="Area2D"]
+position = Vector2(1.5, 0.999998)
+scale = Vector2(0.452778, 0.45)
+texture = ExtResource("2_j52q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k2nir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.25, 0)
-shape = SubResource("RectangleShape2D_1toug")
+shape = SubResource("RectangleShape2D_6wmyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-0.25, -0.25)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("3_lcfq3")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

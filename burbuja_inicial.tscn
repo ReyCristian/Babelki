@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://brbtdodsnj4j2"]
+[gd_scene load_steps=4 format=3 uid="uid://bsoa6trppsx4b"]
 
 [ext_resource type="Script" path="res://area_2d.gd" id="1_4m8ea"]
 [ext_resource type="Texture2D" uid="uid://b67dt34qoykbq" path="res://recursos/burbujas/bubuja.png" id="2_3jflk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iras2"]
-radius = 24.0208
+radius = 18.0
 
 [node name="Burbuja_Inicial" type="Area2D"]
 script = ExtResource("1_4m8ea")
 
+[node name="Bubuja" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0.500002)
+scale = Vector2(0.102778, 0.102778)
+texture = ExtResource("2_3jflk")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iras2")
-
-[node name="Bubuja" type="Sprite2D" parent="."]
-position = Vector2(1, 9.53674e-07)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_3jflk")

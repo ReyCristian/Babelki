@@ -13,8 +13,9 @@ script = ExtResource("1_76eem")
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_8svq7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-position = Vector2(7.77778, 3.33333)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1.5)
+scale = Vector2(0.45, 0.45)
 shape = SubResource("RectangleShape2D_3soly")
 
 [node name="shoot_timer" type="Timer" parent="."]

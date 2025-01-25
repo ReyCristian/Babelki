@@ -26,7 +26,7 @@ func start_shooting():
 
 
 func wait_shooting():
-	$shoot_wait.wait_time=randf_range(2.0,5.0)
+	$shoot_wait.wait_time=randf_range(2.0,10.0)
 	$shoot_wait.one_shot=true
 	$shoot_wait.start()
 
