@@ -7,6 +7,7 @@ extends CharacterBody2D
 var shoot_interval = 1.0  # Intervalo en segundos entre disparos
 var time_since_last_shot = 0.20
 var shoot_timer = 0.5
+var cantidad
 var is_shooting = false  # Controla si el cofre está disparando
 
 func _ready():
@@ -22,6 +23,7 @@ func start_shooting():
 		is_shooting = true
 		$shoot_timer.start()  # Comienza a disparar burbujas
 		$shoot_duration_timer.start()  # Comienza la cuenta regresiva del tiempo de disparo
+		cantidad=randf_range(-0.04,0.05)
 
 
 
@@ -35,12 +37,17 @@ func wait_shooting():
 func _physics_process(delta):
 	position.x 
 
+
 func shoot_bubbles():
 	# Instancia la bala
-	var bubbles = bubbles_scene.instantiate()
+	var bubbles: Burbuja = bubbles_scene.instantiate()
 	bubbles.position = position # la pos del player
 	bubbles.direction = Vector2.UP # va pa arriba
+	bubbles.cantidad_aire= cantidad
 	get_parent().add_child(bubbles) # Añadir la burbuja como hijo
+
+
+
 
 
 func _on_shoot_duration_timeout():

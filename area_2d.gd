@@ -5,6 +5,11 @@ var direction = Vector2.UP
 
 @export var cantidad_aire = +0.02;
 
+func _ready() -> void:
+	color_bubbles()
+
+
+
 
 func _physics_process(delta):
 	position += direction * speed * delta
@@ -13,6 +18,11 @@ func _physics_process(delta):
 
 #func _ready() -> void:
 #	$"000207126Prev".play() acá cambio el audio por el que sea que lleve las burbujas cuando suban
+func color_bubbles():
+	if cantidad_aire<0:
+		modulate = Color("c10011")
+
+
 
 
 func pop() -> float:
