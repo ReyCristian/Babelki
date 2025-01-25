@@ -19,6 +19,8 @@ scale = Vector2(0.45, 0.45)
 shape = SubResource("RectangleShape2D_3soly")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7.5, 4)
+scale = Vector2(3.55, 3.6)
 
 [node name="shoot_timer" type="Timer" parent="."]
 wait_time = 0.5

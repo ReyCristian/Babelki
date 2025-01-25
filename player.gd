@@ -58,3 +58,10 @@ func cargar_tiempo(delta):
 	label.text += str("%02d" % seg);
 	if (hor<=0 && min <=0):
 		label.text += "s"
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		body.explode()
+
+#func explode():
+#	

@@ -11,7 +11,7 @@ radius = 79.0063
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wmyn"]
 size = Vector2(62.5, 62.5)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_tklb1")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player")]
