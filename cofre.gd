@@ -55,3 +55,9 @@ func _on_shoot_duration_timeout():
 	is_shooting = false
 	$shoot_timer.stop()  # Detener el Timer que dispara burbujas
 	wait_shooting()
+
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

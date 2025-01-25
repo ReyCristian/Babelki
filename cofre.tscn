@@ -18,6 +18,8 @@ position = Vector2(3.5, 1.5)
 scale = Vector2(0.45, 0.45)
 shape = SubResource("RectangleShape2D_3soly")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [node name="shoot_timer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -28,6 +30,7 @@ one_shot = true
 [node name="shoot_wait" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="shoot_timer" to="." method="shoot_bubbles"]
 [connection signal="timeout" from="shoot_duration_timer" to="." method="_on_shoot_duration_timeout"]
 [connection signal="timeout" from="shoot_wait" to="." method="start_shooting"]
