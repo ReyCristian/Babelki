@@ -55,3 +55,11 @@ func _on_fullscreen_button_pressed():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		$fullscreen_button.text = "Pantalla Completa"
+
+
+func _on_volver_mouse_entered() -> void:
+	$"BotónP".play()
+
+
+func _on_fullscreen_button_mouse_entered() -> void:
+	$"BotónP".play()

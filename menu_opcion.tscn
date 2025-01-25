@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2otxb2jr1x6p"]
+[gd_scene load_steps=3 format=3 uid="uid://c2otxb2jr1x6p"]
 
 [ext_resource type="Script" path="res://menu_opciones.gd" id="1_pqufy"]
+[ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="2_n3ebr"]
 
 [node name="Menu_Opcion" type="TextureRect"]
 offset_right = 40.0
@@ -55,8 +56,14 @@ text = "volver"
 layout_mode = 2
 text = "Pantalla completa"
 
+[node name="BotónP" type="AudioStreamPlayer" parent="Menu_Opciones"]
+stream = ExtResource("2_n3ebr")
+bus = &"Efecto"
+
 [connection signal="value_changed" from="Menu_Opciones/LabelMaster/master" to="Menu_Opciones" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Menu_Opciones/LabelMusic/music" to="Menu_Opciones" method="_on_music_value_changed"]
 [connection signal="value_changed" from="Menu_Opciones/LabelEfect/Efect" to="Menu_Opciones" method="_on_efect_value_changed"]
+[connection signal="mouse_entered" from="Menu_Opciones/volver" to="Menu_Opciones" method="_on_volver_mouse_entered"]
 [connection signal="pressed" from="Menu_Opciones/volver" to="Menu_Opciones" method="_on_volver_pressed"]
+[connection signal="mouse_entered" from="Menu_Opciones/fullscreen_button" to="Menu_Opciones" method="_on_fullscreen_button_mouse_entered"]
 [connection signal="pressed" from="Menu_Opciones/fullscreen_button" to="Menu_Opciones" method="_on_fullscreen_button_pressed"]

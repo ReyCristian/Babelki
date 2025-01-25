@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jbfnxi8gvc8j"]
+[gd_scene load_steps=3 format=3 uid="uid://jbfnxi8gvc8j"]
 
 [ext_resource type="Script" path="res://v_box_container.gd" id="1_edlap"]
+[ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="2_1o5kh"]
 
 [node name="Main_Menu" type="TextureRect"]
 offset_right = 40.0
@@ -18,6 +19,10 @@ script = ExtResource("1_edlap")
 layout_mode = 2
 text = "Inicio"
 
+[node name="BotónP" type="AudioStreamPlayer" parent="MenuPrincipal"]
+stream = ExtResource("2_1o5kh")
+bus = &"Efecto"
+
 [node name="Opciones" type="Button" parent="MenuPrincipal"]
 layout_mode = 2
 text = "Opciones"
@@ -27,6 +32,9 @@ layout_mode = 2
 text = "Salir
 "
 
+[connection signal="mouse_entered" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_pressed"]
+[connection signal="mouse_entered" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_pressed"]
+[connection signal="mouse_entered" from="MenuPrincipal/Button" to="MenuPrincipal" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Button" to="MenuPrincipal" method="_on_button_pressed"]
