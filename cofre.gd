@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 100
 @export var bubbles_scene = preload("res://burbuja_inicial.tscn")
-@export var shoot_cooldown = 0.2
+@export var shoot_cooldown = 0.4
 @export var shoot_duration = 2.0  # Duración total del disparo
 var shoot_interval = 1.0  # Intervalo en segundos entre disparos
 var time_since_last_shot = 0.20
@@ -25,7 +25,8 @@ func start_shooting():
 		$shoot_duration_timer.start()  # Comienza la cuenta regresiva del tiempo de disparo
 		cantidad=randf_range(-0.03,0.03)
 
-
+func abrir_cofre():
+	$AnimationPlayer.play("abrir")
 
 func wait_shooting():
 	$shoot_wait.wait_time=randf_range(2.0,10.0)
@@ -55,6 +56,7 @@ func _on_shoot_duration_timeout():
 	is_shooting = false
 	$shoot_timer.stop()  # Detener el Timer que dispara burbujas
 	wait_shooting()
+	$AnimationPlayer.play("cerrar")
 
 
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsoa6trppsx4b"]
 
 [ext_resource type="Script" path="res://area_2d.gd" id="1_4m8ea"]
-[ext_resource type="Texture2D" uid="uid://b67dt34qoykbq" path="res://recursos/burbujas/bubuja.png" id="2_3jflk"]
+[ext_resource type="Texture2D" uid="uid://drmc3xpxbdc2l" path="res://recursos/burbujas/Burbuja.svg" id="2_le5io"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iras2"]
-radius = 18.0
+radius = 53.0377
 
 [sub_resource type="Animation" id="Animation_ijcyt"]
 length = 0.001
@@ -33,10 +33,10 @@ tracks/0/path = NodePath("CollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-20, 0), Vector2(0, 0), Vector2(-4, 0), Vector2(18, 0), Vector2(5.33333, 0), Vector2(0, 0), Vector2(-20, 0)]
+"values": [Vector2(0, 0), Vector2(-4, 0), Vector2(18, 0), Vector2(5.33333, 0), Vector2(0, 0), Vector2(-20, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gys2f"]
@@ -51,18 +51,17 @@ script = ExtResource("1_4m8ea")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iras2")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CollisionShape2D"]
+position = Vector2(0.500001, 2.5)
+scale = Vector2(5.45, 5.75)
+
 [node name="Bubuja" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(0.5, 0.500002)
-scale = Vector2(0.102778, 0.102778)
-texture = ExtResource("2_3jflk")
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_le5io")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_gys2f")
 }
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-0.5, 1.5)
-scale = Vector2(1.95, 1.95)
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_exited" from="CollisionShape2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

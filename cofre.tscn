@@ -1,29 +1,166 @@
-[gd_scene load_steps=4 format=3 uid="uid://blencsqb4sx45"]
+[gd_scene load_steps=10 format=3 uid="uid://blencsqb4sx45"]
 
 [ext_resource type="Script" path="res://cofre.gd" id="1_76eem"]
-[ext_resource type="Texture2D" uid="uid://c4pdkvniyevlb" path="res://recursos/entorno/cerrado.png" id="2_8svq7"]
+[ext_resource type="Texture2D" uid="uid://c8qngss36yq0u" path="res://recursos/cofre/Babelki_CofreAbierto.png" id="2_i47m4"]
+[ext_resource type="Texture2D" uid="uid://bq8xwqks5dver" path="res://recursos/cofre/Babelki_CofreCerrado.png" id="3_b8lb5"]
+[ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="3_dqudl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3soly"]
-size = Vector2(135.556, 144.444)
+size = Vector2(277.778, 188.889)
+
+[sub_resource type="Animation" id="Animation_us655"]
+resource_name = "abrir"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CofreAbierto:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../tapa:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_shooting"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wqatn"]
+resource_name = "cerrar"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CofreAbierto:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../tapa:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_twjvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CofreAbierto:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../tapa:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmuxx"]
+_data = {
+"RESET": SubResource("Animation_twjvl"),
+"abrir": SubResource("Animation_us655"),
+"cerrar": SubResource("Animation_wqatn")
+}
 
 [node name="Cofre" type="CharacterBody2D"]
 script = ExtResource("1_76eem")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_8svq7")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 1.5)
+position = Vector2(-0.499996, 24.5)
 scale = Vector2(0.45, 0.45)
 shape = SubResource("RectangleShape2D_3soly")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(7.5, 4)
-scale = Vector2(3.55, 3.6)
+position = Vector2(-1.5, -5)
+scale = Vector2(10.35, 8.7)
 
 [node name="shoot_timer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="shoot_duration_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -32,7 +169,34 @@ one_shot = true
 [node name="shoot_wait" type="Timer" parent="."]
 one_shot = true
 
+[node name="CofreAbierto" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(0, 30)
+scale = Vector2(0.75, 1)
+texture = ExtResource("2_i47m4")
+
+[node name="CofreCerrado" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(0, 11)
+scale = Vector2(0.75, 1)
+texture = ExtResource("3_b8lb5")
+
+[node name="tapa" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -53)
+scale = Vector2(0.75, 1)
+texture = ExtResource("3_dqudl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CofreCerrado")
+libraries = {
+"": SubResource("AnimationLibrary_tmuxx")
+}
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="shoot_timer" to="." method="shoot_bubbles"]
 [connection signal="timeout" from="shoot_duration_timer" to="." method="_on_shoot_duration_timeout"]
-[connection signal="timeout" from="shoot_wait" to="." method="start_shooting"]
+[connection signal="timeout" from="shoot_wait" to="." method="abrir_cofre"]

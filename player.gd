@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 333
 @export var health = 10
 #@onready var shoot: AudioStreamPlayer2D = $Player/Shoot
 

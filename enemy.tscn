@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv8p7knjitcpn"]
+[gd_scene load_steps=3 format=3 uid="uid://dv8p7knjitcpn"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_ow77a"]
 [ext_resource type="Texture2D" uid="uid://dxcsakmthduba" path="res://recursos/enemigo/buzo.png" id="2_svgq3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve1ag"]
-size = Vector2(232, 143)
 
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_ow77a")
@@ -16,12 +13,12 @@ hframes = 4
 vframes = 4
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -8.5)
-shape = SubResource("RectangleShape2D_ve1ag")
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.999999, -5.5)
 scale = Vector2(14.1, 7.75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-109, -8)
+polygon = PackedVector2Array(3, -5, 53, 13, 105, 5, 133, 16, 172, 23, 190, -10, 121, -22, 66, -57, 48, -49, 48, -15, 28, -13, 22, -24)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
