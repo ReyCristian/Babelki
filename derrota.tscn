@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://jr4n52mf4ydb"]
+
+[ext_resource type="Script" path="res://derrota.gd" id="1_0t3ka"]
+[ext_resource type="Texture2D" uid="uid://c7vpb1djffikj" path="res://recursos/burbujas/carpincho_muestra.png" id="1_jvucm"]
+[ext_resource type="Texture2D" uid="uid://drmc3xpxbdc2l" path="res://recursos/burbujas/Burbuja.svg" id="2_by623"]
+[ext_resource type="StyleBox" uid="uid://b2phjuweu5dmo" path="res://derrota_boton.tres" id="4_317hj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxha7"]
+radius = 179.045
+
+[node name="Derrota" type="CanvasLayer"]
+script = ExtResource("1_0t3ka")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(792, 468)
+rotation = 2.0944
+
+[node name="CarpinchoMuestra" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_jvucm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-6, 5)
+shape = SubResource("CircleShape2D_dxha7")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="RigidBody2D"]
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 635.0
+offset_top = 321.0
+offset_right = 1284.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(6.61798e-07, 0.260467, 2.40654e-08, 1)
+theme_override_font_sizes/font_size = 106
+text = "Fin del Juego"
+
+[node name="Mensaje" type="Label" parent="."]
+offset_left = 635.0
+offset_top = 448.0
+offset_right = 1284.0
+offset_bottom = 594.0
+theme_override_colors/font_color = Color(0, 0.258824, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Resististe: "
+horizontal_alignment = 1
+
+[node name="Tiempo" type="Label" parent="."]
+offset_left = 635.0
+offset_top = 511.0
+offset_right = 1284.0
+offset_bottom = 657.0
+theme_override_colors/font_color = Color(0, 0.258824, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Tiempo"
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.21, 0.222547)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(-1742.86, 301.06, -1538.1, 853.751, -1257.14, 1213.22, -809.524, 1559.22, -157.143, 1752.44, 557.143, 1653.58, 1114.29, 1321.07, 1633.33, 665.027, 1728.57, 319.033, 8771.43, -2444.42, -52.3813, -6452.56, -9223.81, -2102.92)
+
+[node name="Burbuja" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0.54902, 1, 0.54902, 0.301961)
+texture = ExtResource("2_by623")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 840.0
+offset_top = 889.0
+offset_right = 1066.0
+offset_bottom = 969.0
+theme_override_colors/font_hover_color = Color(0.360784, 0.709804, 0.741176, 1)
+theme_override_colors/font_pressed_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_focus_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/icon_focus_color = Color(0.360784, 0.709804, 0.741176, 1)
+theme_override_font_sizes/font_size = 52
+theme_override_styles/focus = ExtResource("4_317hj")
+theme_override_styles/hover_pressed = ExtResource("4_317hj")
+theme_override_styles/hover = ExtResource("4_317hj")
+theme_override_styles/pressed = ExtResource("4_317hj")
+theme_override_styles/normal = ExtResource("4_317hj")
+text = "Reiniciar"
+
+[connection signal="pressed" from="Button" to="." method="_on_reiniciar"]

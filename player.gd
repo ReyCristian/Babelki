@@ -8,6 +8,8 @@ var tiempo :float = 0;
 
 var en_burbuja = true;
 
+signal muerte;
+
 func _physics_process(delta):
 	if en_burbuja:
 		nadar();
@@ -62,3 +64,9 @@ func cargar_tiempo(delta):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		$burbuja.pop()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if ! en_burbuja:
+		muerte.emit(tiempo)
+	pass # Replace with function body.

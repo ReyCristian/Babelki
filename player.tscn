@@ -22,6 +22,10 @@ position = Vector2(-0.25, -0.25)
 scale = Vector2(0.82, 0.82)
 texture = ExtResource("3_lcfq3")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.499992, -1.5)
+scale = Vector2(15.85, 15.95)
+
 [node name="burbuja" type="Area2D" parent="." node_paths=PackedStringArray("player")]
 scale = Vector2(2, 2)
 script = ExtResource("2_5d8wt")
@@ -65,5 +69,6 @@ theme_override_font_sizes/font_size = 48
 text = "00:00:00"
 horizontal_alignment = 2
 
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="area_entered" from="burbuja" to="burbuja" method="_on_area_entered"]
 [connection signal="body_entered" from="burbuja" to="." method="_on_area_2d_body_entered"]

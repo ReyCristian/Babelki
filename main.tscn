@@ -82,7 +82,7 @@ texture = ExtResource("7_ys60p")
 motion_mirroring = Vector2(4000, 0)
 
 [node name="BabelkiFondoCardumen1" type="Sprite2D" parent="ParallaxBackground/Peces"]
-position = Vector2(325, 291)
+position = Vector2(3488, 339)
 texture = ExtResource("8_h8rrc")
 
 [node name="Montaña2" type="ParallaxLayer" parent="ParallaxBackground"]

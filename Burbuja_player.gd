@@ -33,6 +33,8 @@ func _on_area_entered(area: Area2D) -> void:
 
 func calcular_oxigeno():
 	oxigeno = (min(scale.x, scale.y) - 0.99)/(escala_inicial - 0.99)
+	if oxigeno < 0:
+		oxigeno = 0;
 	$"../CanvasLayer/VBoxContainer/oxigeno".text = str("%d%%" % int(oxigeno * 100))
 
 func pop():
