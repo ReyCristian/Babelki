@@ -22,5 +22,11 @@ text = "Inicio"
 layout_mode = 2
 text = "Opciones"
 
+[node name="Button" type="Button" parent="MenuPrincipal"]
+layout_mode = 2
+text = "Salir
+"
+
 [connection signal="pressed" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_pressed"]
 [connection signal="pressed" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Button" to="MenuPrincipal" method="_on_button_pressed"]

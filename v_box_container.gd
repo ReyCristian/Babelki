@@ -13,3 +13,7 @@ func _on_inicio_pressed() -> void: #inicio el juego
 func _on_opciones_pressed() -> void:
 #	$Menu.stream_paused = true
 	get_tree().change_scene_to_file("res://menu_opcion.tscn")  # Cargo el menú de opciones
+
+
+func _on_button_pressed() -> void:
+	get_tree().quit()
