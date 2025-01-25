@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1300, 1152), Vector2(1300, -1039)]
+"values": [Vector2(1300, 1152), Vector2(1300, -1220)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqtjo"]
@@ -45,11 +45,14 @@ script = ExtResource("1_hxh61")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 1300.0
-offset_top = -1039.0
+offset_top = 1152.0
 offset_right = 1863.0
-offset_bottom = 81.0
-theme_override_font_sizes/bold_italics_font_size = 30
-theme_override_font_sizes/normal_font_size = 31
+offset_bottom = 2303.0
+theme_override_colors/default_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0.964706, 0.980392, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/bold_italics_font_size = 34
+theme_override_font_sizes/normal_font_size = 34
 bbcode_enabled = true
 text = "Bąbelki
 
@@ -76,6 +79,7 @@ GitHub
 Adobe Ilustrator
 Audacity
 [/right]"
+scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -2,6 +2,7 @@ extends VBoxContainer
 
 #@onready var menu: AudioStreamPlayer2D = $Menu
 
+var pre_creditos = preload("res://creditos.tscn")
 var previous_scene: PackedScene
 
 
@@ -29,3 +30,16 @@ func _on_opciones_mouse_entered() -> void:
 
 func _on_button_mouse_entered() -> void:
 	$"BotónP".play()
+
+func _on_creditos_pressed() -> void:
+	$Creditos.disabled = true;
+	var creditos :Creditos= pre_creditos.instantiate();
+	add_child(creditos)
+	if Global.creditos:
+		termina_creditos()
+	else:
+		creditos.termina.connect(termina_creditos);
+
+func termina_creditos():
+	$Creditos.disabled = false;
+	
