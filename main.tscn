@@ -94,17 +94,10 @@ position = Vector2(960, 706)
 texture = ExtResource("8_uj40o")
 
 [node name="Arena" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(3839, 0)
+motion_mirroring = Vector2(1919, 0)
 
-[node name="Arena" type="Sprite2D" parent="ParallaxBackground/Arena"]
-texture_filter = 1
-position = Vector2(960, 951)
-texture = ExtResource("9_3tvgc")
-
-[node name="Arena2" type="Sprite2D" parent="ParallaxBackground/Arena"]
-texture_filter = 1
-position = Vector2(2879, 951)
-scale = Vector2(-1, 1)
+[node name="BabelkiFondoCapa4" type="Sprite2D" parent="ParallaxBackground/Arena"]
+position = Vector2(960, 958)
 texture = ExtResource("9_3tvgc")
 
 [node name="BabelkiFondoCapa5(transparente)" type="Sprite2D" parent="ParallaxBackground"]

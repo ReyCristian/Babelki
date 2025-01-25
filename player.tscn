@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_tklb1"]
 [ext_resource type="Script" path="res://Burbuja_player.gd" id="2_5d8wt"]
-[ext_resource type="Texture2D" uid="uid://dlqntvxg7sw68" path="res://icon.svg" id="3_lcfq3"]
+[ext_resource type="Texture2D" uid="uid://bwhh2tvpuyk4l" path="res://recursos/Player/Babelki_Carpincho.png" id="2_mnlt0"]
 [ext_resource type="Texture2D" uid="uid://drmc3xpxbdc2l" path="res://recursos/burbujas/Burbuja.svg" id="4_p2gk2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wmyn"]
@@ -12,15 +12,15 @@ size = Vector2(98.25, 96.25)
 radius = 79.0063
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 0
 script = ExtResource("1_tklb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6wmyn")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-0.25, -0.25)
-scale = Vector2(0.82, 0.82)
-texture = ExtResource("3_lcfq3")
+[node name="BabelkiCarpincho" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.561798, 0.561798)
+texture = ExtResource("2_mnlt0")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.499992, -1.5)

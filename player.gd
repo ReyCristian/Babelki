@@ -38,10 +38,10 @@ func nadar():
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 	if Input.is_action_pressed("ui_left"):
-		$CollisionShape2D.scale.x = 1
+		$CollisionShape2D.scale.x = -1
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_right"):
-		$CollisionShape2D.scale.x =-1
+		$CollisionShape2D.scale.x = 1
 		velocity.x += 1
 
 func cargar_tiempo(delta):

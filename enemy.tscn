@@ -1,24 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv8p7knjitcpn"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_ow77a"]
-[ext_resource type="Texture2D" uid="uid://dxcsakmthduba" path="res://recursos/enemigo/buzo.png" id="2_svgq3"]
+[ext_resource type="Texture2D" uid="uid://ilhg0q02oyc2" path="res://recursos/enemigo/Babelki_Tiburon.png" id="2_vr75m"]
 
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_ow77a")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_svgq3")
-flip_h = true
-hframes = 4
-vframes = 4
-frame = 1
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.999999, -5.5)
 scale = Vector2(14.1, 7.75)
 
+[node name="BabelkiTiburon" type="Sprite2D" parent="."]
+position = Vector2(-19, -24)
+scale = Vector2(0.27972, 0.27972)
+texture = ExtResource("2_vr75m")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-109, -8)
-polygon = PackedVector2Array(3, -5, 53, 13, 105, 5, 133, 16, 172, 23, 190, -10, 121, -22, 66, -57, 48, -49, 48, -15, 28, -13, 22, -24)
+polygon = PackedVector2Array(0, 0, 29, -7, 59, -22, 56, -31, 12, -28, -26, -38, -56, -47, -96, -49, -121, -43, -121, -34, -90, -11, -64, -1, -28, 3)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
