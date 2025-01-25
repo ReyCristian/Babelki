@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://blencsqb4sx45"]
+[gd_scene load_steps=13 format=3 uid="uid://blencsqb4sx45"]
 
 [ext_resource type="Script" path="res://cofre.gd" id="1_76eem"]
 [ext_resource type="Texture2D" uid="uid://c8qngss36yq0u" path="res://recursos/cofre/Babelki_CofreAbierto.png" id="2_i47m4"]
 [ext_resource type="Texture2D" uid="uid://bq8xwqks5dver" path="res://recursos/cofre/Babelki_CofreCerrado.png" id="3_b8lb5"]
 [ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="3_dqudl"]
 [ext_resource type="AudioStream" uid="uid://dw4v1l44jgur" path="res://recursos/musica/burbuja.mp3" id="5_s02a4"]
+[ext_resource type="AudioStream" uid="uid://xou6ixd7n06p" path="res://recursos/musica/apertura cofre.mp3" id="6_wp6pe"]
+[ext_resource type="AudioStream" uid="uid://cc6ml8aps6j83" path="res://recursos/musica/cierre cofre.mp3" id="7_a55up"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3soly"]
 size = Vector2(277.778, 188.889)
@@ -194,6 +196,17 @@ texture = ExtResource("3_dqudl")
 [node name="Burbuja" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_s02a4")
 volume_db = -40.0
+bus = &"Efecto"
+
+[node name="AperturaCofre" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wp6pe")
+volume_db = -20.0
+bus = &"Efecto"
+
+[node name="CierreCofre" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_a55up")
+volume_db = -30.0
+bus = &"Efecto"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CofreCerrado")

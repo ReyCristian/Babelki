@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="1_3411q"]
 [ext_resource type="PackedScene" uid="uid://c2otxb2jr1x6p" path="res://menu_opcion.tscn" id="1_j1og0"]
 [ext_resource type="Script" path="res://menu_pause.gd" id="1_vx2gt"]
-[ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="4_khox7"]
+[ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="4_32prg"]
 
 [node name="menu_pause" type="CanvasLayer"]
 process_mode = 2
@@ -56,9 +56,8 @@ text = "Inicio
 layout_mode = 2
 text = "salida"
 
-[node name="BotónP" type="AudioStreamPlayer" parent="menu_pause"]
-stream = ExtResource("4_khox7")
-bus = &"Efecto"
+[node name="Botón2" type="AudioStreamPlayer" parent="menu_pause"]
+stream = ExtResource("4_32prg")
 
 [connection signal="mouse_entered" from="menu_pause/continuar" to="menu_pause" method="_on_continuar_mouse_entered"]
 [connection signal="pressed" from="menu_pause/continuar" to="menu_pause" method="_on_continuar_pressed"]

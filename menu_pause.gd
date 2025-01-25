@@ -18,16 +18,16 @@ func _on_salida_pressed() -> void:
 
 
 func _on_continuar_mouse_entered() -> void:
-	$"BotónP".play()
+	$"Botón2".play()
 
 
 func _on_opciones_mouse_entered() -> void:
-	$"BotónP".play()
+	$"Botón2".play()
 
 
 func _on_menuprin_mouse_entered() -> void:
-	$"BotónP".play()
+	$"Botón2".play()
 
 
 func _on_salida_mouse_entered() -> void:
-	$"BotónP".play()
+	$"Botón2".play()

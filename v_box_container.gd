@@ -21,15 +21,12 @@ func _on_button_pressed() -> void:
 
 
 func _on_inicio_mouse_entered() -> void:
-	$"BotónP".play()
-
+	$"Botón2".play()
 
 func _on_opciones_mouse_entered() -> void:
-	$"BotónP".play()
+	$"Botón2".play()
 
 
-func _on_button_mouse_entered() -> void:
-	$"BotónP".play()
 
 func _on_creditos_pressed() -> void:
 	$Creditos.disabled = true;
@@ -43,3 +40,10 @@ func _on_creditos_pressed() -> void:
 func termina_creditos():
 	$Creditos.disabled = false;
 	
+
+
+func _on_salir_mouse_entered() -> void:
+	$"Botón2".play()
+
+func _on_creditos_mouse_entered() -> void:
+	$"Botón2".play()

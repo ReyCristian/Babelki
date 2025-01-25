@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://v_box_container.gd" id="1_edlap"]
 [ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_qc6jw"]
-[ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="2_1o5kh"]
 [ext_resource type="Texture2D" uid="uid://ck5ksi3y0ldfg" path="res://recursos/Menu/Babelki_BotonInicio.png" id="3_ybweo"]
 [ext_resource type="Texture2D" uid="uid://tq43vnuw3wm5" path="res://recursos/Menu/Babelki_BotonCreditos.png" id="4_m7wyl"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_pj4q2"]
 [ext_resource type="Texture2D" uid="uid://dkje73sr6xk8v" path="res://recursos/Menu/Babelki_BotonSalir.png" id="5_m57dq"]
+[ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="5_vivqu"]
 
 [node name="Main_Menu" type="TextureRect"]
 offset_right = 1920.0
@@ -37,10 +37,6 @@ layout_mode = 2
 icon = ExtResource("3_ybweo")
 flat = true
 
-[node name="BotónP" type="AudioStreamPlayer" parent="MenuPrincipal"]
-stream = ExtResource("2_1o5kh")
-bus = &"Efecto"
-
 [node name="Opciones" type="TextureButton" parent="MenuPrincipal"]
 layout_mode = 2
 texture_normal = ExtResource("4_pj4q2")
@@ -64,6 +60,9 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 104
 text = "OPCIONES"
 
+[node name="Botón2" type="AudioStreamPlayer" parent="MenuPrincipal"]
+stream = ExtResource("5_vivqu")
+
 [node name="Creditos" type="Button" parent="MenuPrincipal"]
 layout_mode = 2
 icon = ExtResource("4_m7wyl")
@@ -78,6 +77,7 @@ flat = true
 [connection signal="pressed" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_pressed"]
 [connection signal="mouse_entered" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_pressed"]
+[connection signal="mouse_entered" from="MenuPrincipal/Creditos" to="MenuPrincipal" method="_on_creditos_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Creditos" to="MenuPrincipal" method="_on_creditos_pressed"]
-[connection signal="mouse_entered" from="MenuPrincipal/Salir" to="MenuPrincipal" method="_on_button_mouse_entered"]
+[connection signal="mouse_entered" from="MenuPrincipal/Salir" to="MenuPrincipal" method="_on_salir_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Salir" to="MenuPrincipal" method="_on_button_pressed"]

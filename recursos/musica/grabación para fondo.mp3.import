@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dn2it85c4k5pn"
+path="res://.godot/imported/grabación para fondo.mp3-23f07c5fe73639970edbbea104be2acd.mp3str"
+
+[deps]
+
+source_file="res://recursos/musica/grabación para fondo.mp3"
+dest_files=["res://.godot/imported/grabación para fondo.mp3-23f07c5fe73639970edbbea104be2acd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -28,7 +28,7 @@ func start_shooting():
 
 func abrir_cofre():
 	$AnimationPlayer.play("abrir")
-	#acá se reproduce el abrir el cofre
+	$AperturaCofre.play()#acá se reproduce el abrir el cofre
 
 func wait_shooting():
 	$shoot_wait.wait_time=randf_range(2.0,10.0)
@@ -59,7 +59,7 @@ func _on_shoot_duration_timeout():
 	$shoot_timer.stop()  # Detener el Timer que dispara burbujas
 	wait_shooting()
 	$AnimationPlayer.play("cerrar")
-	#entiendo que aca se tiene que reproducir el cerrar cofre
+	$CierreCofre.play()
 
 
 
