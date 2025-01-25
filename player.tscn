@@ -17,17 +17,16 @@ script = ExtResource("1_tklb1")
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player")]
 scale = Vector2(2, 2)
 script = ExtResource("2_5d8wt")
-velocidad_perdida = 0.03
-"tamaño_minimo" = 100
 player = NodePath("..")
 
-[node name="Bubuja" type="Sprite2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_k2nir")
+
+[node name="Bubuja" type="Sprite2D" parent="Area2D/CollisionShape2D"]
 position = Vector2(1.5, 0.999998)
 scale = Vector2(0.452778, 0.45)
 texture = ExtResource("2_j52q8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_k2nir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6wmyn")
@@ -40,10 +39,16 @@ texture = ExtResource("3_lcfq3")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 1016.0
-offset_top = 16.0
-offset_right = 1140.0
-offset_bottom = 154.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -212.0
+offset_top = 19.0
+offset_right = -21.0
+offset_bottom = 157.0
+grow_horizontal = 0
+pivot_offset = Vector2(191, 0)
+size_flags_horizontal = 8
 
 [node name="oxigeno" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -58,7 +63,7 @@ horizontal_alignment = 2
 layout_mode = 2
 tooltip_text = "El tiempo que sobreviviste esta partida"
 theme_override_font_sizes/font_size = 48
-text = "00:00"
+text = "00:00:00"
 horizontal_alignment = 2
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

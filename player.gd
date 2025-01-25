@@ -4,11 +4,14 @@ class_name Player extends CharacterBody2D
 @export var health = 10
 #@onready var shoot: AudioStreamPlayer2D = $Player/Shoot
 
+var tiempo :float = 0;
+
 var en_burbuja = true;
 
 func _physics_process(delta):
 	if en_burbuja:
 		nadar();
+		cargar_tiempo(delta);
 	else:
 		caer();
 	handle_movement(delta);
@@ -38,3 +41,20 @@ func nadar():
 	if Input.is_action_pressed("ui_right"):
 		$CollisionShape2D.scale.x =-1
 		velocity.x += 1
+
+func cargar_tiempo(delta):
+	tiempo += delta;
+	var seg = int(tiempo)
+	var min = seg / 60;
+	var hor = min / 60;
+	seg %= 60;
+	min %= 60;
+	var label = $CanvasLayer/VBoxContainer/Tiempo;
+	label.text = "";
+	if (hor > 0):
+		label.text += str("%02d" % hor) + ":"
+	if (hor > 0 || min > 0):
+		label.text += str("%02d" % min) + ":"
+	label.text += str("%02d" % seg);
+	if (hor<=0 && min <=0):
+		label.text += "s"
