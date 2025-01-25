@@ -66,6 +66,7 @@ modulate = Color(0.54902, 1, 0.54902, 0.301961)
 texture = ExtResource("2_by623")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 840.0
 offset_top = 889.0
 offset_right = 1066.0
@@ -81,6 +82,7 @@ theme_override_styles/hover_pressed = ExtResource("4_317hj")
 theme_override_styles/hover = ExtResource("4_317hj")
 theme_override_styles/pressed = ExtResource("4_317hj")
 theme_override_styles/normal = ExtResource("4_317hj")
+disabled = true
 text = "Reiniciar"
 
 [connection signal="pressed" from="Button" to="." method="_on_reiniciar"]

@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var velocidad_perdida = 0.15; 
+@export var velocidad_perdida_fuera_pantalla = 0.5; 
 @export var player:Player;
 
 var oxigeno = 1.0;
@@ -9,8 +10,7 @@ var oxigeno = 1.0;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	calcular_oxigeno();
-	var perdida = delta * velocidad_perdida * oxigeno;
-	agregar_aire(-perdida)
+	perder_oxigeno(delta)
 	revisar_tamaño();
 	pass
 	
@@ -35,8 +35,22 @@ func calcular_oxigeno():
 	oxigeno = (min(scale.x, scale.y) - 0.99)/(escala_inicial - 0.99)
 	if oxigeno < 0:
 		oxigeno = 0;
+	mostrar_oxigeno()
+	
+func mostrar_oxigeno():
 	$"../CanvasLayer/VBoxContainer/oxigeno".text = str("%d%%" % int(oxigeno * 100))
 
+
 func pop():
-		player.burbuja_pop();
-		queue_free()
+	oxigeno=0;
+	mostrar_oxigeno()
+	player.burbuja_pop();
+	queue_free()
+
+func perder_oxigeno(delta):
+	var perdida = 0;
+	if $"../VisibleOnScreenNotifier2D".is_on_screen():
+		perdida = delta * velocidad_perdida * oxigeno;
+	else:
+		perdida = delta * velocidad_perdida_fuera_pantalla
+	agregar_aire(-perdida)
