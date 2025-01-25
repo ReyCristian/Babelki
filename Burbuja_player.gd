@@ -39,6 +39,12 @@ func calcular_oxigeno():
 	
 func mostrar_oxigeno():
 	$"../CanvasLayer/VBoxContainer/oxigeno".text = str("%d%%" % int(oxigeno * 100))
+	if oxigeno < 0.04:
+		$AnimationPlayer.play("peligro_inminente")
+	elif oxigeno < 0.1:
+		$AnimationPlayer.play("peligro")
+	else:
+		$AnimationPlayer.play("RESET")
 
 
 func pop():

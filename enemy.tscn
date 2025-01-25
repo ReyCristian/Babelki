@@ -7,15 +7,17 @@
 script = ExtResource("1_ow77a")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-0.999999, -5.5)
-scale = Vector2(14.1, 7.75)
+position = Vector2(-6.99999, -31)
+scale = Vector2(30.5, 13.1)
 
 [node name="BabelkiTiburon" type="Sprite2D" parent="."]
 position = Vector2(-19, -24)
-scale = Vector2(0.27972, 0.27972)
+scale = Vector2(0.811497, 0.811497)
 texture = ExtResource("2_vr75m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(55, 53)
+scale = Vector2(2.96412, 2.96412)
 polygon = PackedVector2Array(0, 0, 29, -7, 59, -22, 56, -31, 12, -28, -26, -38, -56, -47, -96, -49, -121, -43, -121, -34, -90, -11, -64, -1, -28, 3)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

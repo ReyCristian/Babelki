@@ -22,3 +22,4 @@ func _on_timer_timeout() -> void:
 
 func modificar_timer():
 	$"Timer".wait_time=randf_range(timer_inicio,timer_fin)
+	$"Timer".start()

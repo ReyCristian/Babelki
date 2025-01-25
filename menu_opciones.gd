@@ -39,7 +39,6 @@ func _on_efect_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Efecto"),db_value)
 
 func _on_volver_pressed() -> void:
-	print(get_tree().current_scene)
 	if get_tree().current_scene.name=="Menu_Opcion":
 		get_tree().change_scene_to_file("res://main_menu.tscn")#vuelve al main
 	else:

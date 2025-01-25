@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/grabación para fondo.mp3-23f07c5fe73639970ed
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
