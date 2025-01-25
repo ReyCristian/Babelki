@@ -7,13 +7,11 @@ func _on_timer_timeout() -> void:
 	# Posiciono al jugador (ajusta la posición)
 	var screen_size = $"..".get_viewport_rect().size;
 	var cofre = cofre_scene.instantiate();
-	var colocador_original = $Colocador_Cofre;
-	var nuevo_colocador = colocador_original.instance()
 	
-	add_child(nuevo_colocador)
-	nuevo_colocador.add_child(cofre);
-	var pos = nuevo_colocador.global_position;
-	
-	remove_child(nuevo_colocador);
-	$"..".add_child(nuevo_colocador);
+	var pos = Vector2(
+		randf_range($Marker2D.global_position.x,$Marker2D2.global_position.x),
+		randf_range($Marker2D.global_position.y,$Marker2D2.global_position.y)
+	)
+
+	$"..".add_child(cofre);
 	cofre.global_position = pos;

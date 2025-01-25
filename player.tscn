@@ -15,6 +15,7 @@ size = Vector2(62.5, 62.5)
 script = ExtResource("1_tklb1")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player")]
+scale = Vector2(2, 2)
 script = ExtResource("2_5d8wt")
 "tamaño_minimo" = 100
 player = NodePath("..")

@@ -4,4 +4,5 @@ extends ParallaxBackground
 
 func _process(delta: float) -> void:
 	$ParallaxLayer.motion_offset.x += -delta * velocidad_movimiento; 
+	$"../Agua".position.x += -delta * velocidad_movimiento
 	pass

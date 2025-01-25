@@ -1,17 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://cce44wngl1yfa"]
+[gd_scene load_steps=5 format=3 uid="uid://cce44wngl1yfa"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
 [ext_resource type="Texture2D" uid="uid://bkj6h1cg44itn" path="res://recursos/entorno/fondo pecera.png" id="2_w1d6x"]
-[ext_resource type="PackedScene" uid="uid://bkast56red7c2" path="res://cofre.tscn" id="3_02qf3"]
 [ext_resource type="Script" path="res://generador_de_cofres.gd" id="4_tw68s"]
 [ext_resource type="Script" path="res://Movimiento_fondo.gd" id="4_w6jmw"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Agua" type="Node2D" parent="."]
 script = ExtResource("1_7jjyr")
+
+[node name="Generador de cofres" type="CanvasLayer" parent="Agua"]
+script = ExtResource("4_tw68s")
+
+[node name="Timer" type="Timer" parent="Agua/Generador de cofres"]
+wait_time = 3.142
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="Agua/Generador de cofres"]
+position = Vector2(1230, 471)
+
+[node name="Marker2D2" type="Marker2D" parent="Agua/Generador de cofres"]
+position = Vector2(1232, 614)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("4_w6jmw")
-velocidad_movimiento = 0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2300, 0)
@@ -26,36 +39,4 @@ position = Vector2(1726.5, 444.5)
 scale = Vector2(-1.995, 1.984)
 texture = ExtResource("2_w1d6x")
 
-[node name="Agua" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
-
-[node name="Generador de cofres" type="CanvasLayer" parent="ParallaxBackground/ParallaxLayer/Agua"]
-visible = false
-script = ExtResource("4_tw68s")
-
-[node name="Timer" type="Timer" parent="ParallaxBackground/ParallaxLayer/Agua/Generador de cofres"]
-wait_time = 3.142
-autostart = true
-
-[node name="Colocador_Cofre" type="VisibleOnScreenEnabler2D" parent="ParallaxBackground/ParallaxLayer/Agua/Generador de cofres"]
-position = Vector2(1212.25, 563)
-scale = Vector2(5.075, 6)
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="ParallaxBackground/ParallaxLayer/Agua"]
-
-[node name="Cofre" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_02qf3")]
-position = Vector2(172, 509)
-
-[node name="Cofre2" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_02qf3")]
-position = Vector2(341, 588)
-
-[node name="Cofre3" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_02qf3")]
-position = Vector2(550, 508)
-
-[node name="Cofre4" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_02qf3")]
-position = Vector2(737, 592)
-
-[node name="Cofre5" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_02qf3")]
-position = Vector2(948, 523)
-
-[connection signal="timeout" from="ParallaxBackground/ParallaxLayer/Agua/Generador de cofres/Timer" to="ParallaxBackground/ParallaxLayer/Agua/Generador de cofres" method="_on_timer_timeout"]
+[connection signal="timeout" from="Agua/Generador de cofres/Timer" to="Agua/Generador de cofres" method="_on_timer_timeout"]
