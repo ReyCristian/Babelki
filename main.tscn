@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cce44wngl1yfa"]
+[gd_scene load_steps=7 format=3 uid="uid://cce44wngl1yfa"]
 
 [ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="1_2ljj2"]
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
 [ext_resource type="Texture2D" uid="uid://bkj6h1cg44itn" path="res://recursos/entorno/fondo pecera.png" id="2_w1d6x"]
+[ext_resource type="PackedScene" uid="uid://dv8p7knjitcpn" path="res://enemy.tscn" id="4_amixi"]
 [ext_resource type="Script" path="res://generador_de_cofres.gd" id="4_tw68s"]
 [ext_resource type="Script" path="res://Movimiento_fondo.gd" id="4_w6jmw"]
 
@@ -29,6 +30,22 @@ position = Vector2(1230, 471)
 [node name="Marker2D2" type="Marker2D" parent="Agua/Generador de cofres"]
 position = Vector2(1232, 614)
 
+[node name="Generador de enemy" type="CanvasLayer" parent="Agua"]
+script = ExtResource("4_tw68s")
+cofre_scene = ExtResource("4_amixi")
+timer_inicio = 16.0
+timer_fin = 16.0
+
+[node name="Timer" type="Timer" parent="Agua/Generador de enemy"]
+wait_time = 3.142
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="Agua/Generador de enemy"]
+position = Vector2(1222, 40)
+
+[node name="Marker2D2" type="Marker2D" parent="Agua/Generador de enemy"]
+position = Vector2(1221, 416)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("4_w6jmw")
 
@@ -45,4 +62,7 @@ position = Vector2(1726.5, 444.5)
 scale = Vector2(-1.995, 1.984)
 texture = ExtResource("2_w1d6x")
 
+[node name="EnemyTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Agua/Generador de cofres/Timer" to="Agua/Generador de cofres" method="_on_timer_timeout"]
+[connection signal="timeout" from="Agua/Generador de enemy/Timer" to="Agua/Generador de enemy" method="_on_timer_timeout"]
