@@ -19,6 +19,11 @@ func _ready():
 	$LabelEfect/Efect.value=slider_efecto
 	#if get_tree().current_scene.name=="Menu_Opciones":
 	#	$menu.play() Esto reproduce la musica
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		$fullscreen_button.text = "Modo Ventana"
+	else:
+		$fullscreen_button.text = "Pantalla Completa"
+	
 
 
 func _on_master_value_changed(value: float) -> void:
@@ -39,12 +44,11 @@ func _on_volver_pressed() -> void:
 		get_tree().change_scene_to_file("res://main.tscn")#vuelve al main
 
 
-#func _on_fullscreen_button_pressed():
-	 # Alternar entre pantalla completa y modo ventana
-#	OS.window_fullscreen = not OS.window_fullscreen
-
-	# Cambiar el texto del botón según el estado
-#	if OS.window_fullscreen:
-#		$fullscreen_button.text = "Modo Ventana"
-#	else:
-#		$fullscreen_button.text = "Pantalla Completa"
+func _on_fullscreen_button_pressed():
+	# Verifica el estado actual de la ventana y alterna
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		$fullscreen_button.text = "Modo Ventana"
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		$fullscreen_button.text = "Pantalla Completa"

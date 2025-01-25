@@ -10,8 +10,8 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 164.0
 offset_top = 51.0
-offset_right = 399.0
-offset_bottom = 223.0
+offset_right = 452.0
+offset_bottom = 263.0
 script = ExtResource("1_pqufy")
 
 [node name="LabelMaster" type="Label" parent="Menu_Opciones"]
