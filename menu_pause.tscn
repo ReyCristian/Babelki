@@ -25,7 +25,7 @@ texture = ExtResource("1_3411q")
 [node name="Menu_Opcion" parent="." instance=ExtResource("1_j1og0")]
 visible = false
 
-[node name="menu_pause" type="VBoxContainer" parent="."]
+[node name="menu_pause" type="VBoxContainer" parent="." groups=["menu_pause"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

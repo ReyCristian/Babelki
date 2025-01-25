@@ -1,68 +1,130 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2otxb2jr1x6p"]
+[gd_scene load_steps=6 format=3 uid="uid://c2otxb2jr1x6p"]
 
+[ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_1n56k"]
 [ext_resource type="Script" path="res://menu_opciones.gd" id="1_pqufy"]
 [ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="2_n3ebr"]
+[ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="3_jfnqu"]
+[ext_resource type="Texture2D" uid="uid://ejydvguwv2p8" path="res://recursos/burbujas/Babelki_Burbuja.png" id="3_n8cm5"]
 
 [node name="Menu_Opcion" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BabelkiFondoMenu" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_1n56k")
 
 [node name="Menu_Opciones" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 51.0
-offset_right = 452.0
-offset_bottom = 263.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -226.0
+offset_right = 563.0
+offset_bottom = 703.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_pqufy")
 
 [node name="LabelMaster" type="Label" parent="Menu_Opciones"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.647059, 0.956863, 0.976471, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 80
 text = "Master"
 
-[node name="master" type="HSlider" parent="Menu_Opciones/LabelMaster"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = 18.0
-offset_right = 53.0
-offset_bottom = 34.0
+[node name="master" type="HSlider" parent="Menu_Opciones"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_n8cm5")
+theme_override_icons/grabber_highlight = ExtResource("3_n8cm5")
 
 [node name="LabelMusic" type="Label" parent="Menu_Opciones"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.647059, 0.956863, 0.976471, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 80
 text = "Musica"
 
-[node name="music" type="HSlider" parent="Menu_Opciones/LabelMusic"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 18.0
-offset_right = 53.0
-offset_bottom = 34.0
+[node name="music" type="HSlider" parent="Menu_Opciones"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_n8cm5")
+theme_override_icons/grabber_highlight = ExtResource("3_n8cm5")
 
 [node name="LabelEfect" type="Label" parent="Menu_Opciones"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.192157, 0.466667, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0.647059, 0.956863, 0.976471, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 80
 text = "Efecto"
 
-[node name="Efect" type="HSlider" parent="Menu_Opciones/LabelEfect"]
+[node name="Efect" type="HSlider" parent="Menu_Opciones"]
 layout_mode = 2
-offset_left = -3.0
-offset_top = 13.0
-offset_right = 54.0
-offset_bottom = 29.0
+theme_override_icons/grabber = ExtResource("3_n8cm5")
+theme_override_icons/grabber_highlight = ExtResource("3_n8cm5")
 
 [node name="volver" type="Button" parent="Menu_Opciones"]
 layout_mode = 2
-text = "volver"
+icon = ExtResource("3_jfnqu")
+flat = true
+
+[node name="Label" type="Label" parent="Menu_Opciones/volver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -321.0
+offset_top = 3.0
+offset_right = 328.0
+offset_bottom = 147.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 52
+text = "VOLVER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="fullscreen_button" type="Button" parent="Menu_Opciones"]
 layout_mode = 2
-text = "Pantalla completa"
+icon = ExtResource("3_jfnqu")
+flat = true
+
+[node name="Label" type="Label" parent="Menu_Opciones/fullscreen_button"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -321.0
+offset_top = 7.0
+offset_right = 328.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 52
+text = "PANTALLA COMPLETA"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BotónP" type="AudioStreamPlayer" parent="Menu_Opciones"]
 stream = ExtResource("2_n3ebr")
 bus = &"Efecto"
 
-[connection signal="value_changed" from="Menu_Opciones/LabelMaster/master" to="Menu_Opciones" method="_on_master_value_changed"]
-[connection signal="value_changed" from="Menu_Opciones/LabelMusic/music" to="Menu_Opciones" method="_on_music_value_changed"]
-[connection signal="value_changed" from="Menu_Opciones/LabelEfect/Efect" to="Menu_Opciones" method="_on_efect_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/master" to="Menu_Opciones" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/music" to="Menu_Opciones" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/Efect" to="Menu_Opciones" method="_on_efect_value_changed"]
 [connection signal="mouse_entered" from="Menu_Opciones/volver" to="Menu_Opciones" method="_on_volver_mouse_entered"]
 [connection signal="pressed" from="Menu_Opciones/volver" to="Menu_Opciones" method="_on_volver_pressed"]
 [connection signal="mouse_entered" from="Menu_Opciones/fullscreen_button" to="Menu_Opciones" method="_on_fullscreen_button_mouse_entered"]
