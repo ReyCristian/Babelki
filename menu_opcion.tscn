@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ejydvguwv2p8" path="res://recursos/burbujas/Babelki_Burbuja.png" id="3_n8cm5"]
 
 [node name="Menu_Opcion" type="TextureRect"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2

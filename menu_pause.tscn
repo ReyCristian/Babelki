@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxk016y5ek036"]
+[gd_scene load_steps=7 format=3 uid="uid://cxk016y5ek036"]
 
 [ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="1_3411q"]
 [ext_resource type="PackedScene" uid="uid://c2otxb2jr1x6p" path="res://menu_opcion.tscn" id="1_j1og0"]
 [ext_resource type="Script" path="res://menu_pause.gd" id="1_vx2gt"]
 [ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="4_32prg"]
+[ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_oicd5"]
+[ext_resource type="Texture2D" uid="uid://c8qngss36yq0u" path="res://recursos/cofre/Babelki_CofreAbierto.png" id="6_wbcfo"]
 
 [node name="menu_pause" type="CanvasLayer"]
 process_mode = 2
@@ -15,12 +17,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -278.0
-offset_top = -155.5
-offset_right = 278.0
-offset_bottom = 155.5
+offset_top = -242.0
+offset_right = 329.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3411q")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+offset_left = -65.0
+offset_top = 397.0
+offset_right = 673.0
+offset_bottom = 748.0
+texture = ExtResource("6_wbcfo")
 
 [node name="Menu_Opcion" parent="." instance=ExtResource("1_j1og0")]
 visible = false
@@ -31,30 +40,100 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -68.0
-offset_right = 42.0
-offset_bottom = 68.0
+offset_left = -149.0
+offset_top = -205.0
+offset_right = 531.0
+offset_bottom = 523.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vx2gt")
 
 [node name="continuar" type="Button" parent="menu_pause"]
 layout_mode = 2
-text = "continuar"
+icon = ExtResource("4_oicd5")
+flat = true
+
+[node name="Label" type="Label" parent="menu_pause/continuar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_right = 233.5
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 104
+text = "CONTINUAR"
 
 [node name="opciones" type="Button" parent="menu_pause"]
 layout_mode = 2
-text = "opciones"
+icon = ExtResource("4_oicd5")
+flat = true
+alignment = 0
+
+[node name="Label2" type="Label" parent="menu_pause/opciones"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_right = 233.5
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 104
+text = "OPCIONES"
 
 [node name="menuprin" type="Button" parent="menu_pause"]
 layout_mode = 2
-text = "Inicio
+text = "
 "
+icon = ExtResource("4_oicd5")
+flat = true
+
+[node name="Label" type="Label" parent="menu_pause/menuprin"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_right = 233.5
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 104
+text = "INICIO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="salida" type="Button" parent="menu_pause"]
 layout_mode = 2
-text = "salida"
+icon = ExtResource("4_oicd5")
+flat = true
+
+[node name="Label" type="Label" parent="menu_pause/salida"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_right = 233.5
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.145098, 0.34902, 0.407843, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 104
+text = "SALIDA"
+horizontal_alignment = 1
 
 [node name="Botón2" type="AudioStreamPlayer" parent="menu_pause"]
 stream = ExtResource("4_32prg")
