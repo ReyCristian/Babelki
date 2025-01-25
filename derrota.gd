@@ -1,10 +1,13 @@
 class_name Derrota extends CanvasLayer
 
-var tiempo :float = 3958;
+var tiempo :float = 0;
+
+var pre_creditos = preload("res://creditos.tscn")
+
 
 func _ready() -> void:
 	cargar_tiempo()
-	
+	lanzar_creditos()
 	
 	
 func cargar_tiempo():
@@ -25,3 +28,17 @@ func cargar_tiempo():
 func _on_reiniciar() -> void:
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
+	
+func lanzar_creditos():
+	var creditos :Creditos= pre_creditos.instantiate();
+	add_child(creditos)
+	if Global.creditos:
+		termina_creditos()
+	else:
+		creditos.termina.connect(termina_creditos);
+
+func termina_creditos():
+	Global.creditos = true;
+	$Button.disabled = false;
+	$Button.visible = true;
+	

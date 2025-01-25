@@ -4,6 +4,9 @@ extends Node2D
 @export var derrota_scene: PackedScene = preload("res://derrota.tscn");
 var pause_menu
 
+func _input(event):
+	if event.is_action_pressed("ui_pause"):
+		pause_game()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,12 +30,12 @@ func derrota(tiempo):
 
 func pause_game():
 	pause_menu.visible=true
-	pause_menu.get_node("menu_pause").play()
+	#pause_menu.get_node("menu_pause").play()
 	get_tree().paused = true  # Pausa el árbol de nodos
 
 
 func unpause_game():
 	pause_menu.visible=false
-	pause_menu.get_node("menu_pause").stream_paused=true
+	#pause_menu.get_node("menu_pause").stream_paused=true
 	get_tree().paused = false  # Reanuda el juego
 	

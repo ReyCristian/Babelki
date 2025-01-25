@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://car2xiky7grh7"]
+
+[ext_resource type="Script" path="res://creditos.gd" id="1_hxh61"]
+
+[sub_resource type="Animation" id="Animation_qhod4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1300, 1152)]
+}
+
+[sub_resource type="Animation" id="Animation_3cnr2"]
+resource_name = "iniciar"
+length = 17.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1300, 1152), Vector2(1300, -1039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqtjo"]
+_data = {
+"RESET": SubResource("Animation_qhod4"),
+"iniciar": SubResource("Animation_3cnr2")
+}
+
+[node name="Creditos" type="CanvasLayer"]
+script = ExtResource("1_hxh61")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1300.0
+offset_top = -1039.0
+offset_right = 1863.0
+offset_bottom = 81.0
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/normal_font_size = 31
+bbcode_enabled = true
+text = "Bąbelki
+
+Juego creado para la [b]Global Game  JAM DVBahia [/b]
+Edicion [b] Enero 2025[/b] 
+
+Grupo Bąbelki:
+Programación:
+[right] Exequiel Macaya
+Cristian Rey [/right]
+
+Música y Sonido:
+[right] Marianela Sanhueza [/right]
+
+Arte Visual:
+[right] Julieta Escamilla [/right]
+
+Mentoria y apoyo emocional:
+[right] Florencia Vicencio[/right]
+
+Herramientas utilizadas:
+[right] Godot Engine
+GitHub
+Adobe Ilustrator
+Audacity
+[/right]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xqtjo")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

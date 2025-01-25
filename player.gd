@@ -7,6 +7,7 @@ class_name Player extends CharacterBody2D
 var tiempo :float = 0;
 
 var en_burbuja = true;
+var fin_juego = false;
 
 signal muerte;
 
@@ -26,6 +27,8 @@ func handle_movement(delta):
 	
 func burbuja_pop():
 	en_burbuja = false;
+	if !$VisibleOnScreenNotifier2D.is_on_screen():
+		_on_visible_on_screen_notifier_2d_screen_exited()
 	
 func caer():
 	velocity.y += 1
@@ -67,6 +70,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	if ! en_burbuja:
+	if !en_burbuja and !fin_juego:
+		fin_juego = true;
 		muerte.emit(tiempo)
 	pass # Replace with function body.
