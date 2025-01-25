@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://jbfnxi8gvc8j"]
+
+[ext_resource type="Script" path="res://v_box_container.gd" id="1_edlap"]
+
+[node name="Main_Menu" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuPrincipal" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 86.0
+offset_right = 342.0
+offset_bottom = 129.0
+script = ExtResource("1_edlap")
+
+[node name="Inicio" type="Button" parent="MenuPrincipal"]
+layout_mode = 2
+text = "Inicio"
+
+[node name="Opciones" type="Button" parent="MenuPrincipal"]
+layout_mode = 2
+text = "Opciones"
+
+[connection signal="pressed" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Opciones" to="MenuPrincipal" method="_on_opciones_pressed"]
