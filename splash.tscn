@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3tw8f6ij1mfi"]
+
+[ext_resource type="Script" path="res://splash.gd" id="1_kidgu"]
+[ext_resource type="Texture2D" uid="uid://ckil4kx6iv54m" path="res://recursos/splash/splash.png" id="2_mqlgu"]
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kidgu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 58.0
+offset_right = 2196.0
+offset_bottom = 1658.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mqlgu")
+expand_mode = 1
