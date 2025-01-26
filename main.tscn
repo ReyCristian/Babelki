@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cce44wngl1yfa"]
+[gd_scene load_steps=17 format=3 uid="uid://cce44wngl1yfa"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
 [ext_resource type="AudioStream" uid="uid://dn2it85c4k5pn" path="res://recursos/musica/grabación para fondo.mp3" id="1_i0wxe"]
@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dv8p7knjitcpn" path="res://enemy.tscn" id="4_amixi"]
 [ext_resource type="Script" path="res://generador_de_cofres.gd" id="4_tw68s"]
 [ext_resource type="Script" path="res://Movimiento_fondo.gd" id="4_w6jmw"]
+[ext_resource type="Texture2D" uid="uid://b32wrte7qmmpo" path="res://recursos/Menu/Babelki_BotonPausa.png" id="5_me46r"]
+[ext_resource type="Texture2D" uid="uid://bvf1wggilm3f8" path="res://recursos/Menu/Babelki_BotonAudio.png" id="6_0s08y"]
 [ext_resource type="Texture2D" uid="uid://dwr3bjielyc5u" path="res://recursos/entorno/Babelki_Fondo_Capa1.png" id="6_afhhb"]
+[ext_resource type="Texture2D" uid="uid://coe4wwfmp1gn4" path="res://recursos/Menu/Babelki_BotonMute.png" id="7_vwah2"]
 [ext_resource type="Texture2D" uid="uid://fyubdkujbegb" path="res://recursos/entorno/Babelki_Fondo_Capa2.png" id="7_ys60p"]
 [ext_resource type="Texture2D" uid="uid://rt4u14xqmt78" path="res://recursos/entorno/Babelki_Fondo_Cardumen1.png" id="8_h8rrc"]
 [ext_resource type="Texture2D" uid="uid://bmenlpbg7sy52" path="res://recursos/entorno/Babelki_Fondo_Capa3.png" id="8_uj40o"]
 [ext_resource type="Texture2D" uid="uid://ch36bhoqeikyp" path="res://recursos/entorno/Babelki_Fondo_Capa4.png" id="9_3tvgc"]
 [ext_resource type="Texture2D" uid="uid://dfcg5j1wpmsay" path="res://recursos/entorno/Babelki_Fondo_Cardumen2.png" id="9_mwsqt"]
+[ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="13_duaeu"]
 
 [node name="Main" type="Node2D"]
 
@@ -52,6 +56,30 @@ position = Vector2(2330, 55)
 
 [node name="Marker2D2" type="Marker2D" parent="Agua/Generador de enemy"]
 position = Vector2(2349, 748)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Agua"]
+process_mode = 3
+
+[node name="pausa" type="TextureButton" parent="Agua/CanvasLayer"]
+offset_left = 64.0
+offset_top = 52.0
+offset_right = 180.0
+offset_bottom = 154.0
+texture_normal = ExtResource("5_me46r")
+texture_pressed = ExtResource("5_me46r")
+texture_hover = ExtResource("5_me46r")
+texture_focused = ExtResource("5_me46r")
+
+[node name="mute" type="TextureButton" parent="Agua/CanvasLayer"]
+offset_left = 175.0
+offset_top = 52.0
+offset_right = 291.0
+offset_bottom = 154.0
+toggle_mode = true
+texture_normal = ExtResource("6_0s08y")
+texture_pressed = ExtResource("7_vwah2")
+texture_hover = ExtResource("6_0s08y")
+texture_focused = ExtResource("7_vwah2")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("4_w6jmw")
@@ -113,5 +141,53 @@ texture = ExtResource("2_v3mbu")
 
 [node name="EnemyTimer" type="Timer" parent="."]
 
+[node name="Controles_mobile" type="Node2D" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(215, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 770)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(215, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 770)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
 [connection signal="timeout" from="Agua/Generador de cofres/Timer" to="Agua/Generador de cofres" method="_on_timer_timeout"]
 [connection signal="timeout" from="Agua/Generador de enemy/Timer" to="Agua/Generador de enemy" method="_on_timer_timeout"]
+[connection signal="pressed" from="Agua/CanvasLayer/pausa" to="Agua" method="pause_game"]
+[connection signal="toggled" from="Agua/CanvasLayer/mute" to="Agua" method="_on_mute_toggled"]

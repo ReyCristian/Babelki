@@ -39,3 +39,11 @@ func unpause_game():
 	#pause_menu.get_node("menu_pause").stream_paused=true
 	get_tree().paused = false  # Reanuda el juego
 	
+
+
+func _on_mute_toggled(toggled_on: bool) -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	var is_muted = AudioServer.is_bus_mute(master_bus)
+	AudioServer.set_bus_mute(master_bus, not is_muted)
+	$CanvasLayer/mute.set_pressed_no_signal(!is_muted)
+	$CanvasLayer/mute.focus_mode = Control.FOCUS_NONE
