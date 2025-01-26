@@ -47,3 +47,17 @@ func _on_salir_mouse_entered() -> void:
 
 func _on_creditos_mouse_entered() -> void:
 	$"Botón2".play()
+
+var tutorial:int=0;
+
+func _on_tutorial_pressed() -> void:
+	tutorial+=1;
+	if tutorial == 1:
+		$"../AnimationPlayer".play("ComoJugar")
+	if tutorial == 2:
+		$"../AnimationPlayer".play("Objetivo")
+	if tutorial == 3:
+		$"../AnimationPlayer".play("guardar")
+		tutorial = 0
+	
+	pass # Replace with function body.
