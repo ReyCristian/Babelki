@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2otxb2jr1x6p"]
+[gd_scene load_steps=8 format=3 uid="uid://c2otxb2jr1x6p"]
 
 [ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_1n56k"]
 [ext_resource type="Script" path="res://menu_opciones.gd" id="1_pqufy"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="2_w7xgt"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="3_jfnqu"]
 [ext_resource type="Texture2D" uid="uid://ejydvguwv2p8" path="res://recursos/burbujas/Babelki_Burbuja.png" id="3_n8cm5"]
+[ext_resource type="Script" path="res://ocultar_boton.gd" id="6_ujii2"]
 
 [node name="Menu_Opcion" type="TextureRect"]
 anchors_preset = 15
@@ -105,6 +106,9 @@ vertical_alignment = 1
 layout_mode = 2
 icon = ExtResource("3_jfnqu")
 flat = true
+script = ExtResource("6_ujii2")
+web = false
+touch = true
 
 [node name="Label" type="Label" parent="Menu_Opciones/fullscreen_button"]
 layout_mode = 1

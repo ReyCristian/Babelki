@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jbfnxi8gvc8j"]
+[gd_scene load_steps=10 format=3 uid="uid://jbfnxi8gvc8j"]
 
 [ext_resource type="Script" path="res://v_box_container.gd" id="1_edlap"]
 [ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_qc6jw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_pj4q2"]
 [ext_resource type="Texture2D" uid="uid://dkje73sr6xk8v" path="res://recursos/Menu/Babelki_BotonSalir.png" id="5_m57dq"]
 [ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="5_vivqu"]
+[ext_resource type="Script" path="res://ocultar_boton.gd" id="9_38eui"]
 
 [node name="Main_Menu" type="TextureRect"]
 offset_right = 1920.0
@@ -78,6 +79,7 @@ flat = true
 layout_mode = 2
 icon = ExtResource("5_m57dq")
 flat = true
+script = ExtResource("9_38eui")
 
 [connection signal="mouse_entered" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_mouse_entered"]
 [connection signal="pressed" from="MenuPrincipal/Inicio" to="MenuPrincipal" method="_on_inicio_pressed"]

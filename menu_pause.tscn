@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxk016y5ek036"]
+[gd_scene load_steps=9 format=3 uid="uid://cxk016y5ek036"]
 
 [ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="1_3411q"]
 [ext_resource type="PackedScene" uid="uid://c2otxb2jr1x6p" path="res://menu_opcion.tscn" id="1_j1og0"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="4_32prg"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_oicd5"]
 [ext_resource type="Texture2D" uid="uid://c8qngss36yq0u" path="res://recursos/cofre/Babelki_CofreAbierto.png" id="6_wbcfo"]
+[ext_resource type="Script" path="res://ocultar_boton.gd" id="7_hg1ex"]
 
 [node name="menu_pause" type="CanvasLayer"]
 process_mode = 2
@@ -126,6 +127,7 @@ vertical_alignment = 1
 layout_mode = 2
 icon = ExtResource("4_oicd5")
 flat = true
+script = ExtResource("7_hg1ex")
 
 [node name="Label" type="Label" parent="menu_pause/salida"]
 layout_mode = 1
