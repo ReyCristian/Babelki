@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2otxb2jr1x6p"]
+[gd_scene load_steps=7 format=3 uid="uid://c2otxb2jr1x6p"]
 
 [ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_1n56k"]
 [ext_resource type="Script" path="res://menu_opciones.gd" id="1_pqufy"]
 [ext_resource type="AudioStream" uid="uid://cqk71lhngydaq" path="res://recursos/musica/botón p.mp3" id="2_n3ebr"]
+[ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="2_w7xgt"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="3_jfnqu"]
 [ext_resource type="Texture2D" uid="uid://ejydvguwv2p8" path="res://recursos/burbujas/Babelki_Burbuja.png" id="3_n8cm5"]
 
@@ -16,6 +17,11 @@ grow_vertical = 2
 [node name="BabelkiFondoMenu" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_1n56k")
+
+[node name="Audio3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w7xgt")
+volume_db = -15.0
+autoplay = true
 
 [node name="Menu_Opciones" type="VBoxContainer" parent="."]
 layout_mode = 1
