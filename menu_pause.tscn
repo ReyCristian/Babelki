@@ -25,6 +25,7 @@ grow_vertical = 2
 texture = ExtResource("1_3411q")
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
 offset_left = -65.0
 offset_top = 397.0
 offset_right = 673.0

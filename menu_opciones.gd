@@ -20,9 +20,9 @@ func _ready():
 	#if get_tree().current_scene.name=="Menu_Opciones":
 	#	$menu.play() Esto reproduce la musica
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		$fullscreen_button/Label.text = "Modo Ventana"
+		$fullscreen_button/Label.text = "MODO VENTANA"
 	else:
-		$fullscreen_button/Label.text = "Pantalla Completa"
+		$fullscreen_button/Label.text = "PANTALLA COMPLETA"
 	
 
 
@@ -50,10 +50,10 @@ func _on_fullscreen_button_pressed():
 	# Verifica el estado actual de la ventana y alterna
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		$fullscreen_button/Label.text = "Modo Ventana"
+		$fullscreen_button/Label.text = "MODO VENTANA"
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		$fullscreen_button/Label.text = "Pantalla Completa"
+		$fullscreen_button/Label.text = "PANTALLA COMPLETA"
 
 
 func _on_volver_mouse_entered() -> void:
