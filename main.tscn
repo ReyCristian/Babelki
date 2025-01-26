@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cce44wngl1yfa"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
-[ext_resource type="AudioStream" uid="uid://dn2it85c4k5pn" path="res://recursos/musica/grabación para fondo.mp3" id="1_i0wxe"]
+[ext_resource type="AudioStream" uid="uid://qxbngn7lcq8i" path="res://recursos/musica/grabación chiquisienta.mp3" id="1_lb10f"]
 [ext_resource type="Texture2D" uid="uid://cg2h3nvr8mk5h" path="res://recursos/entorno/Babelki_Fondo_Capa5(transparente).png" id="2_v3mbu"]
 [ext_resource type="PackedScene" uid="uid://dv8p7knjitcpn" path="res://enemy.tscn" id="4_amixi"]
 [ext_resource type="Script" path="res://generador_de_cofres.gd" id="4_tw68s"]
@@ -19,9 +19,9 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Audio3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_i0wxe")
-volume_db = -15.0
+[node name="GrabaciónChiquisienta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lb10f")
+volume_db = -20.0
 autoplay = true
 bus = &"Musica"
 

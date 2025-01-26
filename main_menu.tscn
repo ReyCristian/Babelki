@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://v_box_container.gd" id="1_edlap"]
 [ext_resource type="Texture2D" uid="uid://c0y6mku1ed1r2" path="res://recursos/Menu/Babelki_FondoMenu.png" id="1_qc6jw"]
-[ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="2_phafn"]
+[ext_resource type="AudioStream" uid="uid://qxbngn7lcq8i" path="res://recursos/musica/grabación chiquisienta.mp3" id="2_udeox"]
 [ext_resource type="Texture2D" uid="uid://ck5ksi3y0ldfg" path="res://recursos/Menu/Babelki_BotonInicio.png" id="3_ybweo"]
 [ext_resource type="Texture2D" uid="uid://tq43vnuw3wm5" path="res://recursos/Menu/Babelki_BotonCreditos.png" id="4_m7wyl"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_pj4q2"]
@@ -18,10 +18,11 @@ offset_bottom = 1080.0
 position = Vector2(960, 540)
 texture = ExtResource("1_qc6jw")
 
-[node name="Audio3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_phafn")
+[node name="GrabaciónChiquisienta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_udeox")
 volume_db = -20.0
 autoplay = true
+bus = &"Musica"
 
 [node name="MenuPrincipal" type="VBoxContainer" parent="."]
 layout_mode = 1

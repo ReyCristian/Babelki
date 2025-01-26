@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qxbngn7lcq8i"
+path="res://.godot/imported/grabación chiquisienta.mp3-99402606388e14fd8194f0aee01116c7.mp3str"
+
+[deps]
+
+source_file="res://recursos/musica/grabación chiquisienta.mp3"
+dest_files=["res://.godot/imported/grabación chiquisienta.mp3-99402606388e14fd8194f0aee01116c7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

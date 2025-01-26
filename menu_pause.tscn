@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxk016y5ek036"]
 
+[ext_resource type="AudioStream" uid="uid://qxbngn7lcq8i" path="res://recursos/musica/grabación chiquisienta.mp3" id="1_3gg77"]
 [ext_resource type="Texture2D" uid="uid://dfq6yce0n4j1o" path="res://recursos/cofre/Babelki_CofreAbiertoTapa.png" id="1_3411q"]
 [ext_resource type="PackedScene" uid="uid://c2otxb2jr1x6p" path="res://menu_opcion.tscn" id="1_j1og0"]
-[ext_resource type="AudioStream" uid="uid://dwx30oluw5s55" path="res://recursos/musica/audio 3.mp3" id="1_n3pp4"]
 [ext_resource type="Script" path="res://menu_pause.gd" id="1_vx2gt"]
 [ext_resource type="AudioStream" uid="uid://dn5cynulu7ilm" path="res://recursos/musica/botón 2.mp3" id="4_32prg"]
 [ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="4_oicd5"]
@@ -13,10 +13,11 @@
 process_mode = 2
 layer = 5
 
-[node name="Audio3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_n3pp4")
+[node name="GrabaciónChiquisienta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3gg77")
 volume_db = -20.0
 autoplay = true
+bus = &"Musica"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
