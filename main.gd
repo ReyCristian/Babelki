@@ -22,6 +22,9 @@ func _ready() -> void:
 	pause_menu=preload("res://menu_pause.tscn").instantiate()
 	add_child(pause_menu)
 	pause_menu.visible=false
+	var master_bus = AudioServer.get_bus_index("Master")
+	var is_muted = AudioServer.is_bus_mute(master_bus)
+	$CanvasLayer/mute.set_pressed_no_signal(is_muted)
 
 func derrota(tiempo):
 	var burbuja_derrota :Derrota = derrota_scene.instantiate()
