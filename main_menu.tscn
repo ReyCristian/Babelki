@@ -19,6 +19,7 @@ texture = ExtResource("1_qc6jw")
 
 [node name="Audio3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_phafn")
+volume_db = -20.0
 autoplay = true
 
 [node name="MenuPrincipal" type="VBoxContainer" parent="."]

@@ -143,6 +143,100 @@ texture = ExtResource("2_v3mbu")
 
 [node name="Controles_mobile" type="Node2D" parent="."]
 
+[node name="Controles_mobile_intermedio" type="Node2D" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="Controles_mobile_intermedio2" type="Node2D" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio2"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio2"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio2"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Controles_mobile/Controles_mobile_intermedio2"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Controles_mobile"]
 modulate = Color(1, 1, 1, 0.670588)
 z_index = 500
