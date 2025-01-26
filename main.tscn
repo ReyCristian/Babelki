@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cce44wngl1yfa"]
+[gd_scene load_steps=14 format=3 uid="uid://cce44wngl1yfa"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7jjyr"]
 [ext_resource type="AudioStream" uid="uid://dn2it85c4k5pn" path="res://recursos/musica/grabación para fondo.mp3" id="1_i0wxe"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bmenlpbg7sy52" path="res://recursos/entorno/Babelki_Fondo_Capa3.png" id="8_uj40o"]
 [ext_resource type="Texture2D" uid="uid://ch36bhoqeikyp" path="res://recursos/entorno/Babelki_Fondo_Capa4.png" id="9_3tvgc"]
 [ext_resource type="Texture2D" uid="uid://dfcg5j1wpmsay" path="res://recursos/entorno/Babelki_Fondo_Cardumen2.png" id="9_mwsqt"]
+[ext_resource type="Texture2D" uid="uid://bn83tlwg76ebf" path="res://recursos/Menu/Babelki_Boton.png" id="13_duaeu"]
 
 [node name="Main" type="Node2D"]
 
@@ -112,6 +113,52 @@ scale = Vector2(1.63701, 0.999798)
 texture = ExtResource("2_v3mbu")
 
 [node name="EnemyTimer" type="Timer" parent="."]
+
+[node name="Controles_mobile" type="Node2D" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(215, 660)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(330, 770)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(215, 890)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Controles_mobile"]
+modulate = Color(1, 1, 1, 0.670588)
+z_index = 500
+position = Vector2(100, 770)
+scale = Vector2(0.161677, 0.672514)
+texture_normal = ExtResource("13_duaeu")
+texture_pressed = ExtResource("13_duaeu")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
 
 [connection signal="timeout" from="Agua/Generador de cofres/Timer" to="Agua/Generador de cofres" method="_on_timer_timeout"]
 [connection signal="timeout" from="Agua/Generador de enemy/Timer" to="Agua/Generador de enemy" method="_on_timer_timeout"]
